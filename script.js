@@ -1,7 +1,8 @@
-const entrada = document.querySelector('#input-texto');
-const form = document.querySelector('form');
-const criptografar = document.querySelector('#btn-cripto');
-const descriptografar = document.querySelector('#btn-descripto');
+const entrada = document.getElementById("input-texto");
+const saida = document.getElementById("msg");
+const criptografar = document.getElementById("btn-cripto");
+const descriptografar = document.getElementById("btn-descripto");
+const botaoCopiar = document.getElementById("btn-copy");
 
 // Criptografar
 function criptografarTexto (entrada){

@@ -10,59 +10,25 @@
 <body>
   <h1 class="titulo">Criptografar E Descriptografar</h1>
 
-  <main class="main">
+  <main class="main"> 
     <section class="form box">
-      <form>
+      <form id="form" >
         <label for="input-texto">Escreva apenas letras minúsculas e sem acento</label>
-        <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="insira o texto aqui">
-        <input class="btn" type="submit" value="Criptografar!" id="btn-cripto">
-        <input class="btn" type="submit" value="Descriptografar!" id="btn-descripto">
+        <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Insira o texto aqui">
+        <input class="btn" type="submit" value="Criptografar!" id="btn-cripto" onclick="criptografarTexto()">
+        <input class="btn" type="submit" value="Descriptografar!" id="btn-descripto" onclick="descriptografarTexto()">
       </form>
     </section>
   
-    <section class="msg box">
-      <h2 id="">Mensagem criptografada:</h2>
-      <input class="text-input" type="text" id="msg"></input>
-      <input class="btn" type="submit" value="Copiar" id="btn-copy">
+    <section class="msg box" id=" second box">
+      <h3>Mensagem criptografada:</h2>
+      <input class="text-input" type="text" name="input-texto"  placeholder="Mensagem criptografada" id="msg"></input>
+      <input class="btn" type="submit" value="Copiar" id="btn-copy" onclick="copiarTexto()">
     </section>
   </main>
 
   <script src="script.js"></script>
 </body>
 </html>
-
-
-<!-- pegar o valor do input
-ex: pessoa escreveu alura
-function criptografarTexto (entrada){
-  
-  let entrada = querySelector("#input-texto")
-  let entradaTextoArray [] = entrada.split("");   ------------- [a,l,u,r,a]
-  let saidacriptografada "";
-
-for(let i = 0; i<= entradaTextoArray.length; i++ ) {
-  if(i == a){
-    primeiraSaida = ai
-    saidaCriptografada += ai  ----------  ai+"" = ai // +=  =  saidaCriptografada = saidaCriptografada + ai
-  }
-  if( i == e){
-    segundaSaida = enter
-    saidacriptografada += enter  ------------------- ai+enter = aienter
-  }
-
-      else{
-        saidacriptografada += entradaTextoArray[i];
-      }
-}
-
-
-return saidaCriptografada =primeiraSaida+segundaSaida+terceiraSada = aienter
-}
-
-criptografarTexto = // no botao criptografar
-    
-
-
--->
 
 
