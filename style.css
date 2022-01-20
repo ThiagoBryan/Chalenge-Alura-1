@@ -2,11 +2,11 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 body {
-  background-color: rgb(43, 38, 38);
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  background-color: #5A6A75;
 }
 
 .main {
@@ -20,15 +20,21 @@ body {
   padding: 15px;
   width: 30vw;
   margin: auto;
-  color: rgb(86, 86, 207);
+  color: white;
 
 }
+
+/* h3{
+  padding-bottom: 20px;
+  color: white;
+  font-weight: 300;
+} */
 
 .box {
   padding: 10px;
   margin: 0 10px 0 10px;
   box-shadow: 2px 2px 2px 1px rgba(9, 5, 22, 0.2);
-  background-color: rgb(187, 230, 174);
+  background-color: #5A6A75;
   border-radius: 0.5em;
   width: 30vw;
   height: auto;
@@ -36,17 +42,22 @@ body {
 
 .btn {
   border: 0;
-  color: rgb(15, 15, 15);
+  color: white;
   font-weight: bold;
-  background-color: blue;
+  background-color: black;
   padding: 10px;
   margin-top: 10px;
   border-radius: 0.5em;
 }
+.btn:hover{
+  cursor: pointer;
+  background-color: #666;
+  color: white;
+}
 
 .text-input {
   border-radius: 0.5em;
-  border: 1px solid rgba(122, 20, 20, 0.2);
+  border: 1px solid #5A6A75;
   display: block;
   padding: 0.5em;
   width: 100%;

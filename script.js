@@ -5,85 +5,94 @@ const descriptografar = document.getElementById("btn-descripto");
 const botaoCopiar = document.getElementById("btn-copy");
 
 // Criptografar
-function criptografarTexto (entrada){
-    
-    let entradaTextoArray = [];
-     entradaTextoArray = entrada.split("");   // separa letras
-    let saidaCriptografada = "";
-  
-  for(let i = 0; i < entradaTextoArray.length; i++ ) {
-    if(entradaTextoArray[i] == "a"){
-      saidaCriptografada += "ai"; 
-    }
-    else if(entradaTextoArray[i] == "e"){
-      saidaCriptografada += "enter"; 
-    }
-    else if(entradaTextoArray[i] == "i"){ 
-        saidaCriptografada += "imes";
-    }
-    else if ( entradaTextoArray[i] == "o"){
-        saidaCriptografada += "ober"; 
-    }
-    else if( entradaTextoArray[i] == "u"){
-        saidaCriptografada += "ufat"; 
-    }
-    else {
-          saidaCriptografada += entradaTextoArray[i];
+criptografar.onclick = function (e) {
+  e.preventDefault();
+  alterarTextoBotaoParaCopiar()
+  criptografarTexto(entrada.value);
+  entrada.value = "";
+};
 
-        }
-  }
-  console.log(saidaCriptografada);
-  return saidaCriptografada;
+descriptografar.onclick = function (e) {
+  e.preventDefault();
+  alterarTextoBotaoParaCopiar()
+  descriptografarTexto(entrada.value);
+  entrada.value = "";
+};
+
+function saidaInput(texto) {
+  saida.value = texto;
 }
 
-form.addEventListener('submit', function(event){
-  event.preventDefault();
-  let entradaTexto = {}; 
-  entradaTexto.entradas = entrada.value;
-  if (criptografar){
-    criptografar.addEventListener('click', function(){
-    });
-    criptografarTexto(entradaTexto.entradas);
-  } else {
-    descriptografar.addEventListener('click', function(){
-    });
-    descriptografarTexto(entradaTexto.entradas);
+function copiarTexto() {
+  let textoCopiado = saida;
+  textoCopiado.select();
+  document.execCommand("copy");
+  alterarTextoBotaoParaCopiado();
+}
+
+function alterarTextoBotaoParaCopiado(){
+  botaoCopiar.value = "Copiado"
+}
+function alterarTextoBotaoParaCopiar(){
+  botaoCopiar.value = "Copiar"
+}
+
+// Criptografar
+function criptografarTexto(entrada) {
+  let entradaTextoArray = [];
+  entradaTextoArray = entrada.split(""); // separa letras
+  let saidaCriptografada = "";
+
+  for (let i = 0; i < entradaTextoArray.length; i++) {
+    if (entradaTextoArray[i] == "a") {
+      saidaCriptografada += "ai";
+    } else if (entradaTextoArray[i] == "e") {
+      saidaCriptografada += "enter";
+    } else if (entradaTextoArray[i] == "i") {
+      saidaCriptografada += "imes";
+    } else if (entradaTextoArray[i] == "o") {
+      saidaCriptografada += "ober";
+    } else if (entradaTextoArray[i] == "u") {
+      saidaCriptografada += "ufat";
+    } else {
+      saidaCriptografada += entradaTextoArray[i];
+    }
   }
-   entrada.value = '';
-})
-
-
-
+  saidaInput(saidaCriptografada);
+}
 
 // Descriptografar
-
 function descriptografarTexto(texto) {
+  let i = 0;
+  let naoAcabou = true;
 
-let i = 0;
-let naoAcabou = true;
-  
-  while(naoAcabou){
+  while (naoAcabou) {
     if (texto.includes("ai")) {
       texto = texto.replace("ai", "a");
-      i++
-    } if (texto.includes("enter")) {
-      texto = texto.replace("enter", "e");
-      i++
-    } if (texto.includes("imes")) {
-      texto = texto.replace("imes", "i");
-      i++
-    } if (texto.includes("ober")) {
-      texto = texto.replace("ober", "o");
-      i++
-    } if (texto.includes("ufat")) {
-      texto = texto.replace("ufat", "u");
-      i++
+      i++;
     }
-     if(i==0){
+    if (texto.includes("enter")) {
+      texto = texto.replace("enter", "e");
+      i++;
+    }
+    if (texto.includes("imes")) {
+      texto = texto.replace("imes", "i");
+      i++;
+    }
+    if (texto.includes("ober")) {
+      texto = texto.replace("ober", "o");
+      i++;
+    }
+    if (texto.includes("ufat")) {
+      texto = texto.replace("ufat", "u");
+      i++;
+    }
+    if (i == 0) {
       naoAcabou = false;
-     }
-      i=0;
+    }
+    i = 0;
   }
+  saidaInput(texto);
 }
 
 
