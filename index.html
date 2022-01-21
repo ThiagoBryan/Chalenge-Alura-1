@@ -8,25 +8,30 @@
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
-  <h1 class="titulo">Criptografar E Descriptografar</h1>
+  <h1 class="titulo">Criptografar & Descriptografar</h1>
+  
 
   <main class="main"> 
     <section class="form box">
       <form id="form" >
-        <label for="input-texto">Escreva apenas letras minúsculas e sem acento</label>
+        <h3><label for="input-texto">Escreva apenas letras minúsculas e sem acento</label></h3>
         <input class="text-input" type="text" name="input-texto" id="input-texto" placeholder="Insira o texto aqui">
         <input class="btn" type="submit" value="Criptografar!" id="btn-cripto" onclick="criptografarTexto()">
         <input class="btn" type="submit" value="Descriptografar!" id="btn-descripto" onclick="descriptografarTexto()">
+      
       </form>
     </section>
   
     <section class="msg box" id=" second box">
-      <h3>Mensagem criptografada:</h2>
-      <input class="text-input" type="text" name="input-texto"  placeholder="Mensagem criptografada" id="msg"></input>
+      <h3>Mensagem criptografada:</h3>
+      <input class="text-input" type="text" name="input-texto" id="input-segundo" placeholder="Mensagem criptografada" id="msg"></input>
       <input class="btn" type="submit" value="Copiar" id="btn-copy" onclick="copiarTexto()">
     </section>
   </main>
-
+  <footer>
+    Challenge Oracle-Alura #1 
+     <p>Thiago</p>
+  </footer>
   <script src="script.js"></script>
 </body>
 </html>

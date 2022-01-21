@@ -3,39 +3,46 @@ const saida = document.getElementById("msg");
 const criptografar = document.getElementById("btn-cripto");
 const descriptografar = document.getElementById("btn-descripto");
 const botaoCopiar = document.getElementById("btn-copy");
+const botaoColar = document.getElementById("btn-paste");
 
-// Criptografar
+// botões
 criptografar.onclick = function (e) {
-  e.preventDefault();
-  alterarTextoBotaoParaCopiar()
-  criptografarTexto(entrada.value);
-  entrada.value = "";
+  e.preventDefault(); // prevenir que a pagina recarregue
+  alterarNomeBotao("Copiar"); // alterar o texto do botão
+  criptografarTexto(entrada.value); // texto escrito
+  entrada.value = ""; // limpar caixa de texto
 };
 
 descriptografar.onclick = function (e) {
-  e.preventDefault();
-  alterarTextoBotaoParaCopiar()
+  e.preventDefault(); 
+  alterarNomeBotao("Copiar");
   descriptografarTexto(entrada.value);
   entrada.value = "";
 };
 
-function saidaInput(texto) {
+function saidaInput(texto) { //função para aparecer o texto da primeira caixa para a segunda
   saida.value = texto;
+          // pega o valor do texto do input
 }
 
-function copiarTexto() {
-  let textoCopiado = saida;
-  textoCopiado.select();
-  document.execCommand("copy");
-  alterarTextoBotaoParaCopiado();
+function copiarTexto() { // funçao para copiar o texto criptografado
+  let textoCopiado = saida; //variavel criada para copiar o texto criptografado
+  textoCopiado.select(); // selecionar o texto copiado
+  document.execCommand("copy"); // comando do js para copiar o texto criptografado
+  alterarNomeBotao("Copiado"); // quando copia o texto muda o nome do botao
 }
 
-function alterarTextoBotaoParaCopiado(){
-  botaoCopiar.value = "Copiado"
+function colarTexto() { // funçao para colar o texto criptografado
+  let textoColado = saida; 
+  textoColado.select(); 
+  document.execCommand("paste"); 
+  alterarNomeBotao("Colado");
 }
-function alterarTextoBotaoParaCopiar(){
-  botaoCopiar.value = "Copiar"
+
+function alterarNomeBotao(texto){ // função para alterar on nome do botão copiar
+  botaoCopiar.value = texto 
 }
+
 
 // Criptografar
 function criptografarTexto(entrada) {
